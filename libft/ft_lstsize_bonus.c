@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:35:13 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/18 19:51:13 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/08/01 14:35:24 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/08/01 15:49:48 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include	"libft.h"
 
-# include "libft/libft.h"
+int	ft_lstsize(t_list *lst)
+{
+	int		i;
+	t_list	*ptr;
 
-#endif
+	i = 0;
+	ptr = lst;
+	if (!lst)
+		return (0);
+	while (ptr != NULL)
+	{
+		ptr = ptr->next;
+		i++;
+	}
+	return (i);
+}

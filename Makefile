@@ -6,7 +6,36 @@
 #    By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 14:35:22 by bfernan2          #+#    #+#              #
-#    Updated: 2025/09/16 14:35:23 by bfernan2         ###   ########.fr        #
+#    Updated: 2025/09/18 19:39:43 by bfernan2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME= push_swap
+
+SRC = main.c
+
+OBJ= $(SRC:.c=.o)
+CC= cc
+CFLAGS= -Wall -Wextra -Werror
+LIBFT_DIR= ./libft/
+LIBFT= $(LIBFT_DIR)libft.a
+
+all: $(NAME)
+
+$(NAME): $(OBJ) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR) all
+
+clean:
+	rm -f $(OBJ)
+	$(MAKE) -C $(LIBFT_DIR) clean
+
+fclean: clean
+	rm -f $(NAME)
+	$(MAKE) -C $(LIBFT_DIR) fclean
+
+re: fclean all
+
+.PHONY: all clean fclean re

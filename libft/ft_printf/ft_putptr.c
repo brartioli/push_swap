@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:35:13 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/18 19:51:13 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/08/09 15:56:07 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/08/12 14:59:08 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include	"ft_printf.h"
 
-# include "libft/libft.h"
+int	ft_putptr(void *ptr)
+{
+	unsigned long	p;
+	int				count;
 
-#endif
+	count = 0;
+	if (!ptr)
+		return (ft_putstr("(nil)"));
+	p = (unsigned long)ptr;
+	count += ft_putstr("0x");
+	count += ft_puthex(p, 'x');
+	return (count);
+}

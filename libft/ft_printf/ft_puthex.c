@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:35:13 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/18 19:51:13 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/08/11 11:59:42 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/08/11 14:39:42 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include	"ft_printf.h"
 
-# include "libft/libft.h"
+int	ft_puthex(unsigned long n, char x)
+{
+	char	*base;
+	int		count;
 
-#endif
+	count = 0;
+	if (x == 'x')
+		base = "0123456789abcdef";
+	else if (x == 'X')
+		base = "0123456789ABCDEF";
+	else
+		return (0);
+	if (n > 15)
+		count += ft_puthex(n / 16, x);
+	count += ft_putchar(base[n % 16]);
+	return (count);
+}

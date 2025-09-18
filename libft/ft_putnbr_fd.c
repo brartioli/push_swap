@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:35:13 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/18 19:51:13 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/07/28 17:43:48 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/08/07 09:43:51 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include	"libft.h"
 
-# include "libft/libft.h"
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nl;
 
-#endif
+	nl = n;
+	if (nl < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nl = -nl;
+	}
+	if (nl >= 10)
+	{
+		ft_putnbr_fd(nl / 10, fd);
+		ft_putnbr_fd(nl % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(nl + 48, fd);
+	}
+}
