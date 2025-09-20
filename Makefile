@@ -6,17 +6,17 @@
 #    By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 14:35:22 by bfernan2          #+#    #+#              #
-#    Updated: 2025/09/18 20:08:52 by bfernan2         ###   ########.fr        #
+#    Updated: 2025/09/20 16:54:05 by bfernan2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= push_swap
 
-SRC = main.c
+SRC = main.c ft_atoil.c 
 
 OBJ= $(SRC:.c=.o)
 CC= cc
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS= #-Wall -Wextra -Werror
 LIBFT_DIR= ./libft/
 LIBFT= $(LIBFT_DIR)libft.a
 

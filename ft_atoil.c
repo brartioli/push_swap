@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_atoil.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 14:35:13 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/20 16:51:19 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/09/20 16:30:09 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/09/20 16:50:55 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include	"push_swap.h"
 
-# include "libft/libft.h"
-# include <stdlib.h>
-# include <limits.h>
-
-typedef struct s_stack
+long	ft_atoil(const char *nptr)
 {
-	int				number;
-	int				index;
-	struct s_stack	*next;
-}	t_stack;
+	long	res;
+	long	sign;
 
-int	main(int argc, char *argv[]);
-long	ft_atoil(const char *nptr);
-//void	check_args(int argc, char *argv[]);
-
-#endif
+	res = 0;
+	sign = 1;
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
+		nptr++;
+	if (*nptr == '-')
+		sign *= -1;
+	if (*nptr == '-' || *nptr == '+')
+		nptr++;
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		res = res * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (res * sign);
+}
