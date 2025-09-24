@@ -6,13 +6,13 @@
 #    By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 14:35:22 by bfernan2          #+#    #+#              #
-#    Updated: 2025/09/20 16:54:05 by bfernan2         ###   ########.fr        #
+#    Updated: 2025/09/23 18:35:20 by bfernan2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= push_swap
 
-SRC = main.c ft_atoil.c 
+SRC = main.c validations.c 
 
 OBJ= $(SRC:.c=.o)
 CC= cc

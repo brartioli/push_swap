@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:13 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/20 16:51:19 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/23 20:43:07 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 
 int	main(int argc, char *argv[]);
 long	ft_atoil(const char *nptr);
-//void	check_args(int argc, char *argv[]);
+int	check_is_letter(char *str);
+int	reapt_number(t_stack *a);
 
 #endif
