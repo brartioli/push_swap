@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 16:30:09 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/25 17:58:02 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/25 20:49:51 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	check_is_letter(char *str)
 	return (0);
 }
 
-int	reapt_number(t_stack *a, int number)
+int	repeat_number(t_stack *a, int number)
 {
 	t_stack	*tmp;
 	
