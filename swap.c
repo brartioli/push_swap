@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 14:35:24 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/27 11:50:11 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/09/27 10:45:38 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/09/27 11:13:46 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include	"push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+void	sa(t_stack **a)
 {
-	int		i;
-	t_list	*ptr;
+	swap(a);
+	ft_printf("sa\n");
+}
 
-	i = 0;
-	ptr = lst;
-	if (!lst)
-		return (0);
-	while (ptr != NULL)
-	{
-		ptr = ptr->next;
-		i++;
-	}
-	return (i);
+void	sb(t_stack **b)
+{
+	swap(b);
+	ft_printf("sb\n");
+}
+
+void	ss(t_stack **a, t_stack **b)
+{
+	swap(a);
+	swap(b);
+	ft_printf("ss\n");
 }

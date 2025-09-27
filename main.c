@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:33 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/25 21:02:57 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/27 12:02:06 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ t_stack	*init_node(int number)
 	return (aux);
 }
 
-static void	print_stack(t_stack *a)
+static void	print_stack(t_stack *stack)
 {
-	while (a)
+	while (stack)
 	{
-		ft_printf("%i\n", a->number);
-		a = a->next;
+		ft_printf("%i\n", stack->number);
+		stack = stack->next;
 	}
 }
 
@@ -74,6 +74,7 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		return (0);
 	a = build_stack(argc, argv);
+	ra(&a);
 	print_stack(a);
 	return (0);
 }

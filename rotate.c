@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 14:35:24 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/27 11:50:11 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/09/27 11:56:32 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/09/27 11:58:46 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include	"push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+void	ra(t_stack **a)
 {
-	int		i;
-	t_list	*ptr;
-
-	i = 0;
-	ptr = lst;
-	if (!lst)
-		return (0);
-	while (ptr != NULL)
-	{
-		ptr = ptr->next;
-		i++;
-	}
-	return (i);
+	rotate(a);
+	ft_printf("ra\n");
 }

@@ -6,45 +6,46 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:25:06 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/25 19:54:06 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/27 12:01:37 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-t_stack	*add_node(t_stack **a, t_stack *new)
+t_stack	*add_node(t_stack **lst, t_stack *new)
 {
 	if (!new)
 		return (NULL);
-	new->next = *a;
-	*a = new;
+	new->next = *lst;
+	*lst = new;
 	return (new);
 }
 
-t_stack	*last_node(t_stack *a)
+t_stack	*last_node(t_stack *lst)
 {
 	t_stack	*ptr;
 
-	ptr = a;
-	if  (!a)
+	ptr = lst;
+	if  (!lst)
 		return (NULL);
 	while (ptr->next != NULL)
 		ptr = ptr->next;
 	return (ptr);
 }
 
-t_stack	*add_last(t_stack **a, t_stack *new)
+t_stack	*add_last(t_stack **stack, t_stack *new)
 {
 	t_stack	*ptr;
 	
 	if (!new)
 		return (NULL);
-	if (*a == NULL)
+	if (*stack == NULL)
 	{
-		*a = new;
+		*stack = new;
 		return (new);
 	}
-	ptr = last_node(*a);
+	ptr = last_node(*stack);
 	ptr->next = new;
 	return (new);
 }
+

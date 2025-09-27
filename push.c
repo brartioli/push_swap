@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/01 14:35:24 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/27 11:50:11 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/09/27 11:27:49 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/09/27 11:41:40 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include	"push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+void	pa(t_stack **a, t_stack **b)
 {
-	int		i;
-	t_list	*ptr;
+	push(b, a);
+	ft_printf("pa\n");
+}
 
-	i = 0;
-	ptr = lst;
-	if (!lst)
-		return (0);
-	while (ptr != NULL)
-	{
-		ptr = ptr->next;
-		i++;
-	}
-	return (i);
+void	pb(t_stack **a, t_stack **b)
+{
+	push(a, b);
+	ft_printf("pb\n");
 }
