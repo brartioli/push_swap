@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 21:03:34 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/27 13:53:09 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/30 17:48:54 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,23 @@ void	rotate(t_stack **stack)
 	end = last_node(*stack);
 	end->next = init;
 	init->next = NULL;
+}
+
+void	reverse_rotate(t_stack **stack)
+{
+	t_stack	*end;
+	t_stack	*before_end;
+
+	if (!stack || !*stack || !(*stack)->next)
+		return ;
+	end = *stack;
+	before_end = NULL;
+	while (end->next)
+	{
+		before_end = end;
+		end = end->next;
+	}
+	before_end->next = NULL;
+	end->next = *stack;
+	*stack = end;
 }

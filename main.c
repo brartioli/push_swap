@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:33 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/27 12:02:06 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/30 18:06:41 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,10 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		return (0);
 	a = build_stack(argc, argv);
-	ra(&a);
+	b = build_stack(argc, argv);
+	rrr(&a, &b);
 	print_stack(a);
+	ft_printf("--------\n");
+	print_stack(b);
 	return (0);
 }
