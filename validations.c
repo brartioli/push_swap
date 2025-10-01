@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 16:30:09 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/25 20:49:51 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/30 20:30:37 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ long	ft_atoil(const char *nptr)
 	while (*nptr >= '0' && *nptr <= '9')
 	{
 		res = res * 10 + (*nptr - '0');
-		if ((sign == 1 && res > INT_MAX) || (sign == -1 && -res < INT_MIN))
+		if ((sign == 1 && res > INT_MAX) || (sign == -1 && - res < INT_MIN))
 		{
 			ft_printf("Error\n");
 			exit (1);
@@ -37,10 +37,11 @@ long	ft_atoil(const char *nptr)
 	}
 	return (res * sign);
 }
+
 int	check_is_letter(char *str)
 {
 	int	i;
-	
+
 	if (!str || !str[0])
 		exit (1);
 	i = 0;
@@ -63,7 +64,7 @@ int	check_is_letter(char *str)
 int	repeat_number(t_stack *a, int number)
 {
 	t_stack	*tmp;
-	
+
 	tmp = a;
 	while (tmp)
 	{

@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 17:49:17 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/30 20:34:06 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/09/30 20:03:04 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/09/30 20:55:33 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-void	rra(t_stack **a)
+void	ft_exit_error(t_stack **a)
 {
-	reverse_rotate(a);
-	ft_printf("rra\n");
+	t_stack	*tmp;
+
+	while (*a)
+	{
+		tmp = (*a)->next;
+		free(*a);
+		*a = tmp;
+	}
+	ft_printf("Error\n");
+	exit (1);
 }
 
-void	rrb(t_stack **b)
+void	free_split(char **split)
 {
-	reverse_rotate(b);
-	ft_printf("rrb\n");
-}
+	int	i;
 
-void	rrr(t_stack **a, t_stack **b)
-{
-	reverse_rotate(a);
-	reverse_rotate(b);
-	ft_printf("rrr\n");
+	i = 0;
+	if (!split)
+		return ;
+	while (split[i])
+	{
+		free (split[i]);
+		i++;
+	}
+	free (split);
 }

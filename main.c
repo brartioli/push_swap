@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:33 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/30 18:06:41 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/30 21:10:36 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,11 @@ static t_stack	*build_stack(int argc, char *argv[])
 			check_is_letter(args[j]);
 			value = ft_atoil(args[j]);
 			if (repeat_number(a, value))
-			{
-				ft_printf("Error\n");
-				exit (1);
-			}
+				ft_exit_error(&a);
 			add_last(&a, init_node(value));
 			j++;
 		}
+		free_split(args);
 		i++;
 	}
 	return (a);
@@ -69,15 +67,14 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*a;
 	t_stack	*b;
-	
+
 	b = NULL;
 	if (argc < 2)
 		return (0);
 	a = build_stack(argc, argv);
 	b = build_stack(argc, argv);
-	rrr(&a, &b);
+	pa(&a, &b);
 	print_stack(a);
-	ft_printf("--------\n");
 	print_stack(b);
 	return (0);
 }

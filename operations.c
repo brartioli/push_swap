@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 21:03:34 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/30 17:48:54 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/30 20:33:18 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	swap(t_stack **stack)
 void	push(t_stack **src, t_stack **dst)
 {
 	t_stack	*tmp;
-	
+
 	if (!src || !*src)
 		return ;
 	tmp = *src;

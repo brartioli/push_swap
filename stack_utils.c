@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 19:25:06 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/27 12:01:37 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/30 20:31:51 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stack	*last_node(t_stack *lst)
 	t_stack	*ptr;
 
 	ptr = lst;
-	if  (!lst)
+	if (!lst)
 		return (NULL);
 	while (ptr->next != NULL)
 		ptr = ptr->next;
@@ -36,7 +36,7 @@ t_stack	*last_node(t_stack *lst)
 t_stack	*add_last(t_stack **stack, t_stack *new)
 {
 	t_stack	*ptr;
-	
+
 	if (!new)
 		return (NULL);
 	if (*stack == NULL)
@@ -48,4 +48,3 @@ t_stack	*add_last(t_stack **stack, t_stack *new)
 	ptr->next = new;
 	return (new);
 }
-
