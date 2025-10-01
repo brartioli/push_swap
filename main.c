@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:33 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/30 21:10:36 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/09/30 21:18:24 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,7 @@ int	main(int argc, char *argv[])
 	pa(&a, &b);
 	print_stack(a);
 	print_stack(b);
+	free(a);
+	free(b);
 	return (0);
 }
