@@ -49,5 +49,7 @@ void	rr(t_stack **a, t_stack **b);
 void	rra(t_stack **stack);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+void	index_stack(t_stack *a);
+void	free_stack(t_stack **stack)
 
 #endif

@@ -40,3 +40,40 @@ void	free_split(char **split)
 	}
 	free (split);
 }
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	while (*stack)
+	{
+		tmp = (*stack)
+		{
+			tmp = (*stack)->next;
+			free(*stack);
+			*stack = tmp;
+		}
+	}
+}
+
+void	index_stack(t_stack *a)
+{
+	t_stack		*current;
+	t_stack		*other;
+	int			index;
+
+	current = a;
+	while (current)
+	{
+		index = 0;
+		other = a;
+		while (other)
+		{
+			if (other->number < current->number)
+				index++;
+			other = other->next;
+		}
+		current->index = index;
+		current = current->next;
+	}
+}

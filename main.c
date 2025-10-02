@@ -72,11 +72,10 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		return (0);
 	a = build_stack(argc, argv);
-	b = build_stack(argc, argv);
-	pa(&a, &b);
+	b = NULL;
 	print_stack(a);
 	print_stack(b);
-	free(a);
-	free(b);
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }
