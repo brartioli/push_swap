@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:13 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/30 20:50:11 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/07 18:20:25 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ void	rra(t_stack **stack);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 void	index_stack(t_stack *a);
-void	free_stack(t_stack **stack)
+void	free_stack(t_stack **stack);
 
 #endif

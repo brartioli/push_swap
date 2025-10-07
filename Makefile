@@ -6,7 +6,7 @@
 #    By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 14:35:22 by bfernan2          #+#    #+#              #
-#    Updated: 2025/09/30 20:52:32 by bfernan2         ###   ########.fr        #
+#    Updated: 2025/10/07 19:34:16 by bfernan2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME= push_swap
 
 SRC = main.c validations.c stack_utils.c \
 operations.c swap.c push.c rotate.c reverse_rotate.c \
-push_swap_utils.c
+push_swap_utils.c chunk_element.c 
 
 OBJ= $(SRC:.c=.o)
 CC= cc
