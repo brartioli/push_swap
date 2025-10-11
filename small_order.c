@@ -1,55 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   small_order.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 20:03:04 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/11 15:35:37 by bfernan2         ###   ########.fr       */
+/*   Created: 2025/10/11 16:20:48 by bfernan2          #+#    #+#             */
+/*   Updated: 2025/10/11 17:24:06 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-void	ft_exit_error(t_stack **a, char **args)
+int	already_sorted(t_stack *a)
 {
-	t_stack	*tmp;
-
-	while (*a)
+	while (a && a->next)
 	{
-		tmp = (*a)->next;
-		free(*a);
-		*a = tmp;
+		if (a->number > a->next->number)
+			return (0);
+		a = a->next;
 	}
-	free_split(args);
-	ft_printf("Error\n");
-	exit (1);
+	return (1);
 }
 
-void	free_split(char **split)
+void	one_element(t_stack *a)
 {
-	int	i;
-
-	i = 0;
-	if (!split)
-		return ;
-	while (split[i])
+	if (!a || !a->next)
 	{
-		free (split[i]);
-		i++;
-	}
-	free (split);
-}
-
-void	free_stack(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
+		free_stack(&a);
+		exit (0);
 	}
 }
+
+// void	two_element(t_stack *a, t_stack *b)
+// {
+// 	if (a && a->next)
+// 	{
+// 		if(a->number )
+// 	}	
+// }

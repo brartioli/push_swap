@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 16:30:09 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/30 20:30:37 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/11 15:41:19 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ long	ft_atoil(const char *nptr)
 	return (res * sign);
 }
 
-int	check_is_letter(char *str)
+int	check_is_letter(char *str, char **arg)
 {
 	int	i;
 
@@ -54,6 +54,7 @@ int	check_is_letter(char *str)
 		if (!ft_isdigit(str[i]))
 		{
 			ft_printf("Error\n");
+			free_split(arg);
 			exit (1);
 		}
 		i++;

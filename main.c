@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:33 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/07 19:05:02 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/11 17:30:48 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ static t_stack	*build_stack(int argc, char *argv[])
 		args = ft_split(argv[i], ' ');
 		while (args[j])
 		{
-			check_is_letter(args[j]);
+			check_is_letter(args[j], args);
 			value = ft_atoil(args[j]);
 			if (repeat_number(a, value))
-				ft_exit_error(&a);
+				ft_exit_error(&a, args);
 			add_last(&a, init_node(value));
 			j++;
 		}
@@ -73,8 +73,11 @@ int	main(int argc, char *argv[])
 		return (0);
 	a = build_stack(argc, argv);
 	b = NULL;
-	print_stack(a);
-	print_stack(b);
+	ft_printf("%d", already_sorted(a));
+	index_stack(&a);
+	// printf("%d", a->index);
+	// print_stack(a);
+	// print_stack(b);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
