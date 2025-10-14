@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:33 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/11 17:30:48 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/13 21:16:45 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ static t_stack	*build_stack(int argc, char *argv[])
 	}
 	return (a);
 }
+
+void	sort(int len_a, t_stack **a, t_stack **b);
 
 int	main(int argc, char *argv[])
 {

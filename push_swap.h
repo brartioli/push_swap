@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:13 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/11 17:22:18 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/13 21:07:05 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,13 @@ void	index_stack(t_stack **a);
 void	free_stack(t_stack **stack);
 int		already_sorted(t_stack *a);
 void	one_element(t_stack *a);
-void	two_element(t_stack *a, t_stack *b);
+void	two_element(t_stack **a);
+void	three_element(t_stack **a);
+void	four_elements(t_stack **a, t_stack **b);
+void	four_five_elements(t_stack **a, t_stack **b);
+int		get_smaller_nb(t_stack *stack);
+int		stack_position(t_stack *stack, int smaller);
+int		stack_len(t_stack *stack);
+void	decide_and_rotate_smaller(t_stack **a, int smaller);
 
 #endif
