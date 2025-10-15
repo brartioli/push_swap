@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bfernan2 <bfernan2@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:33 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/13 21:16:45 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/15 23:31:16 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack	*init_node(int number)
 	return (aux);
 }
 
-static void	print_stack(t_stack *stack)
+void	print_stack(t_stack *stack)
 {
 	while (stack)
 	{
@@ -63,23 +63,36 @@ static t_stack	*build_stack(int argc, char *argv[])
 	return (a);
 }
 
-void	sort(int len_a, t_stack **a, t_stack **b);
+void	sort(int len_a, t_stack **a, t_stack **b)
+{
+	if (len_a == 1)
+		exit (0);
+	else if (len_a == 2)
+		sort_2(a);
+	else if (len_a == 3)
+		sort_3(a);
+	else if (len_a <= 4)
+		sort_5(a, b);
+	else if (len_a <= 100)
+		sort_100(a, b);
+
+}
 
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
 	t_stack	*b;
+	int		len_a;
 
-	b = NULL;
 	if (argc < 2)
 		return (0);
 	a = build_stack(argc, argv);
 	b = NULL;
-	ft_printf("%d", already_sorted(a));
-	index_stack(&a);
-	// printf("%d", a->index);
-	// print_stack(a);
-	// print_stack(b);
+	if (!already_sorted(a))
+	{
+		len_a = stack_len(a);
+		sort(len_a, &a, &b);
+	}
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

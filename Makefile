@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+         #
+#    By: bfernan2 <bfernan2@student.42.f>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 14:35:22 by bfernan2          #+#    #+#              #
-#    Updated: 2025/10/13 20:35:12 by bfernan2         ###   ########.fr        #
+#    Updated: 2025/10/15 22:23:54 by bfernan2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,12 @@ NAME= push_swap
 SRC = main.c validations.c stack_utils.c \
 operations.c swap.c push.c rotate.c reverse_rotate.c \
 push_swap_utils.c index.c small_order.c small_order_utils.c \
+100_order.c 500_order.c 
 
 
 OBJ= $(SRC:.c=.o)
 CC= cc
-CFLAGS= #-Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror
 LIBFT_DIR= ./libft/
 LIBFT= $(LIBFT_DIR)libft.a
 

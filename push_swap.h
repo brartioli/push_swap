@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bfernan2 <bfernan2@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:13 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/13 21:07:05 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/15 23:00:52 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,21 @@ void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 void	index_stack(t_stack **a);
 void	free_stack(t_stack **stack);
-int		already_sorted(t_stack *a);
-void	one_element(t_stack *a);
-void	two_element(t_stack **a);
-void	three_element(t_stack **a);
-void	four_elements(t_stack **a, t_stack **b);
-void	four_five_elements(t_stack **a, t_stack **b);
+//small elements
+void	sort_2(t_stack **a);
+void	sort_3(t_stack **a);
+void	sort_5(t_stack **a, t_stack **b);
+//small elements utils
 int		get_smaller_nb(t_stack *stack);
+int		already_sorted(t_stack *a);
 int		stack_position(t_stack *stack, int smaller);
 int		stack_len(t_stack *stack);
 void	decide_and_rotate_smaller(t_stack **a, int smaller);
+//big order
+void    sort_100(t_stack **a, t_stack **b);
+void    decide_and_rotate_a(t_stack **stack, int chunk);
+void	decide_and_rotate_b(t_stack **stack, int bigger);
+void    pass_to_b(t_stack **a, t_stack **b);
+void	pass_to_a(t_stack **a, t_stack **b);
 
 #endif
