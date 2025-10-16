@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   100_order.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfernan2 <bfernan2@student.42.f>           +#+  +:+       +#+        */
+/*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 22:19:21 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/15 23:21:15 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/16 18:36:22 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include    "push_swap.h"
 
-void    sort_100(t_stack **a, t_stack **b)
+void	sort_100(t_stack **a, t_stack **b)
 {
 	pass_to_b(a, b);
 	pass_to_a(a, b);
 }
 
-void    decide_and_rotate_a(t_stack **stack, int chunk)
+void	decide_and_rotate_a(t_stack **stack, int chunk)
 {
-	t_stack *tmp;
-	int     pos;
-	int     len;
+	t_stack	*tmp;
+	int		pos;
+	int		len;
 
 	len = stack_len(*stack);
 	pos = 0;
@@ -33,7 +33,7 @@ void    decide_and_rotate_a(t_stack **stack, int chunk)
 		tmp = tmp->next;
 	}
 	if (!tmp)
-		return;
+		return ;
 	if (pos <= len / 2)
 		ra(stack);
 	else
@@ -62,10 +62,10 @@ void	decide_and_rotate_b(t_stack **stack, int bigger)
 		rrb(stack);
 }
 
-void    pass_to_b(t_stack **a, t_stack **b)
+void	pass_to_b(t_stack **a, t_stack **b)
 {
-	int     chunk;
-	int     pushed;
+	int	chunk;
+	int	pushed;
 
 	chunk = 35;
 	pushed = 0;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bfernan2 <bfernan2@student.42.f>           +#+  +:+       +#+         #
+#    By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/16 14:35:22 by bfernan2          #+#    #+#              #
-#    Updated: 2025/10/15 22:23:54 by bfernan2         ###   ########.fr        #
+#    Updated: 2025/10/16 18:49:41 by bfernan2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ push_swap_utils.c index.c small_order.c small_order_utils.c \
 
 OBJ= $(SRC:.c=.o)
 CC= cc
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror -g
 LIBFT_DIR= ./libft/
 LIBFT= $(LIBFT_DIR)libft.a
 

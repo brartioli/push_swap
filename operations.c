@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 21:03:34 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/09/30 20:33:18 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/16 18:13:35 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,32 +41,32 @@ void	push(t_stack **src, t_stack **dst)
 void	rotate(t_stack **stack)
 {
 	t_stack	*init;
-	t_stack	*end;
+	t_stack	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	init = *stack;
 	*stack = init->next;
-	end = last_node(*stack);
-	end->next = init;
+	last = last_node(*stack);
+	last->next = init;
 	init->next = NULL;
 }
 
 void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*end;
-	t_stack	*before_end;
+	t_stack	*pen;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	end = *stack;
-	before_end = NULL;
+	pen = NULL;
 	while (end->next)
 	{
-		before_end = end;
+		pen = end;
 		end = end->next;
 	}
-	before_end->next = NULL;
+	pen->next = NULL;
 	end->next = *stack;
 	*stack = end;
 }

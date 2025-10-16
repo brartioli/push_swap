@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 20:03:04 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/11 15:35:37 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/16 20:22:28 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	free_split(char **split)
 		i++;
 	}
 	free (split);
+	split = NULL;
 }
 
 void	free_stack(t_stack **stack)

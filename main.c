@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfernan2 <bfernan2@student.42.f>           +#+  +:+       +#+        */
+/*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:33 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/15 23:31:16 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/16 20:38:53 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static t_stack	*build_stack(int argc, char *argv[])
 		args = ft_split(argv[i], ' ');
 		while (args[j])
 		{
-			check_is_letter(args[j], args);
+			check_is_letter(args[j], args, &a);
 			value = ft_atoil(args[j]);
 			if (repeat_number(a, value))
 				ft_exit_error(&a, args);
@@ -71,11 +71,10 @@ void	sort(int len_a, t_stack **a, t_stack **b)
 		sort_2(a);
 	else if (len_a == 3)
 		sort_3(a);
-	else if (len_a <= 4)
+	else if (len_a <= 5)
 		sort_5(a, b);
 	else if (len_a <= 100)
 		sort_100(a, b);
-
 }
 
 int	main(int argc, char *argv[])
@@ -86,7 +85,9 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 		return (0);
+	a = NULL;
 	a = build_stack(argc, argv);
+	index_stack(&a);
 	b = NULL;
 	if (!already_sorted(a))
 	{
