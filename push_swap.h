@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:13 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/16 20:38:27 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/16 21:30:01 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
 
 int		main(int argc, char *argv[]);
 //validations_args
-long	ft_atoil(const char *nptr);
+long	ft_atoil(const char *nptr, t_stack **a, char **arg);
 int		check_is_letter(char *str, char **arg, t_stack **a);
 int		repeat_number(t_stack *a, int number);
 //stack_utils
@@ -71,5 +71,8 @@ void	decide_and_rotate_a(t_stack **stack, int chunk);
 void	decide_and_rotate_b(t_stack **stack, int bigger);
 void	pass_to_b(t_stack **a, t_stack **b);
 void	pass_to_a(t_stack **a, t_stack **b);
+//order_500
+void	pass_to_b_500(t_stack **a, t_stack **b);
+void	sort_500(t_stack **a, t_stack **b);
 
 #endif

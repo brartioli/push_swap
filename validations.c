@@ -6,13 +6,13 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 16:30:09 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/16 20:39:32 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/16 21:32:17 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-long	ft_atoil(const char *nptr)
+long	ft_atoil(const char *nptr, t_stack **a, char **arg)
 {
 	long	res;
 	long	sign;
@@ -30,8 +30,8 @@ long	ft_atoil(const char *nptr)
 		res = res * 10 + (*nptr - '0');
 		if ((sign == 1 && res > INT_MAX) || (sign == -1 && - res < INT_MIN))
 		{
-			ft_printf("Error\n");
-			exit (1);
+			ft_exit_error(a, arg);
+			exit(1);
 		}
 		nptr++;
 	}

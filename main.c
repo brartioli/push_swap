@@ -6,7 +6,7 @@
 /*   By: bfernan2 <bfernan2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 14:35:33 by bfernan2          #+#    #+#             */
-/*   Updated: 2025/10/16 20:38:53 by bfernan2         ###   ########.fr       */
+/*   Updated: 2025/10/16 21:31:04 by bfernan2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static t_stack	*build_stack(int argc, char *argv[])
 		while (args[j])
 		{
 			check_is_letter(args[j], args, &a);
-			value = ft_atoil(args[j]);
+			value = ft_atoil(args[j], &a, args);
 			if (repeat_number(a, value))
 				ft_exit_error(&a, args);
 			add_last(&a, init_node(value));
@@ -66,7 +66,9 @@ static t_stack	*build_stack(int argc, char *argv[])
 void	sort(int len_a, t_stack **a, t_stack **b)
 {
 	if (len_a == 1)
+	{
 		exit (0);
+	}
 	else if (len_a == 2)
 		sort_2(a);
 	else if (len_a == 3)
@@ -75,6 +77,8 @@ void	sort(int len_a, t_stack **a, t_stack **b)
 		sort_5(a, b);
 	else if (len_a <= 100)
 		sort_100(a, b);
+	else
+		sort_500(a, b);
 }
 
 int	main(int argc, char *argv[])
